@@ -13,7 +13,7 @@ public class charCount {
 		System.out.println("enter a string");
 		String s1=scan.nextLine();
 		//String noSpace=s1.replaceAll("\\s","");//if we do not use replaceAll method to eliminate space in the string we will get count for space also
-		//char[] ch1=noSpace.toCharArray();
+		//char[] ch1=noSpace.toCharArray(); // testing the git commit
 		char[] ch1=s1.toCharArray();
 		numOfCount(ch1);
 	
