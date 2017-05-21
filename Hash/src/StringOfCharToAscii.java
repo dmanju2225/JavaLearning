@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
 
-public class StringOfCharToInt {
+public class StringOfCharToAscii {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan =new Scanner(System.in);
+		System.out.println("enter a string");
 		String s1=scan.nextLine();
+		
 		String result=conversion(s1);
 		System.out.println(result);
 
