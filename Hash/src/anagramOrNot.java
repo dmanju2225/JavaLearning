@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -11,8 +12,22 @@ public class anagramOrNot {
 		String s1=scan.nextLine();
 		System.out.println("enter string2");
 		String s2=scan.nextLine();
-		checkAnagram(s1,s2);
+		//checkAnagram(s1,s2);
+		checkAnagramm(s1,s2);
 
+	}
+
+	private static void checkAnagramm(String s1, String s2) {
+		// TODO Auto-generated method stub
+		char[] ch=s2.toCharArray();
+		Arrays.sort(ch);
+		//sort other array also, two sorted arrays should be same for anagram
+		if(s1.equals(new String(ch))){
+			System.out.println("anagram");
+		}
+		else{
+			System.out.println("not an anagram");
+		}
 	}
 
 	private static void checkAnagram(String s1, String s2) {

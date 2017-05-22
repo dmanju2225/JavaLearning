@@ -25,14 +25,16 @@ public class rotationOrNot {
 		// TODO Auto-generated method stub
 		char[] ch1=s1.toCharArray();
 		char temp=ch1[0];                  //saving first element is temp becoz in loop first element will become second element
-		for(int i=0;i<s1.length();i++){
+		for(int i=0;i<s1.length()-1;i++){
 			
-			if(i==(s1.length()-1)){    //if i becomes the last position ,last element become first element and break the for loop
-				ch1[i]=temp;
-				break;               
-			}
+		//	if(i==(s1.length()-1)){    //if i becomes the last position ,last element become first element and break the for loop
+			//	ch1[i]=temp;
+				//break;               
+			//}
 			ch1[i]=ch1[i+1];
-		}                       //after for loop breaks ,have to convert result array to string
+		}
+		ch1[s1.length()-1] = temp;
+		//after for loop breaks ,have to convert result array to string
 		String s=new String(ch1);  //to convert array ch1 to a string
 		
 		return s;     // will return the string to calling method s3 first , and s4 second
