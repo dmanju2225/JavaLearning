@@ -9,7 +9,9 @@ public class findLongestDistinctSubstring {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		System.out.println("enter a string");
-		String s1 = scan.nextLine();
+		String s2 = scan.nextLine();
+		String s1=s2.replaceAll("\\s","");
+		System.out.println(s1);
 		ArrayList<String> ar1 = substring(s1);
 		System.out.println(ar1);
 		ArrayList<String> ar3 = distinctSubstring(ar1);
@@ -34,8 +36,29 @@ public class findLongestDistinctSubstring {
 
 	private static ArrayList<String> distinctSubstring(ArrayList<String> ar1) {
 		// TODO Auto-generated method stub
-		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
+		//HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
+		HashSet<Character> hs=new HashSet<Character>();
 		ArrayList<String> ar2 = new ArrayList<String>();
+		for(String s:ar1){
+			int flag=0;
+			char[] ch=s.toCharArray();
+			for(int i=0;i<ch.length;i++){
+				if(hs.contains(ch[i])){
+					flag=1;
+					break;
+				}
+				else{
+					hs.add(ch[i]);
+				}
+			}
+			if(flag==0){
+				ar2.add(s);	     
+			}
+			hs.clear();	
+			
+		}
+		return ar2;
+		/*ArrayList<String> ar2 = new ArrayList<String>();
 		for (String s : ar1) {
 			int flag = 0;
 			char[] ch = s.toCharArray();
@@ -54,7 +77,7 @@ public class findLongestDistinctSubstring {
 				ar2.add(s);
 			}
 		}
-		return ar2;
+		return ar2;*/
 	}
 	private static void longestSubstring(ArrayList<String> ar3) {
 		// TODO Auto-generated method stub

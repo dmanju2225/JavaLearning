@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 
 public class firstRepeatedNnonRepeated {
@@ -17,14 +18,15 @@ public class firstRepeatedNnonRepeated {
 
 	private static void firstRepeated(char[] ch) {
 		// TODO Auto-generated method stub
-		HashMap<Character,Integer> hm=new HashMap<Character,Integer>();
+		//HashMap<Character,Integer> hm=new HashMap<Character,Integer>();
+		TreeMap<Character,Integer> tm=new TreeMap<Character,Integer>();
 		for(int i=0;i<ch.length;i++){
-			if(hm.containsKey(ch[i])){
+			if(tm.containsKey(ch[i])){
 				System.out.println("first repeated character is "+ch[i]);
 				break;
 			}
 			else{
-				hm.put(ch[i],1);
+				tm.put(ch[i],1);
 			}
 		}
 	}
