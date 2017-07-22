@@ -112,24 +112,32 @@ SELECT firsSELECT firstname,lastname,dept_name FROM dept_employeRelation
 INNER JOIN Employees ON Employees.emp_no=dept_employeRelation.emp_no
 INNER JOIN Departments ON Departments.dept_no=dept_employeRelation.dept_no
 WHERE dept_name='Civil';
+
 SELECT firstname,lastname,dept_name FROM Employees
 INNER JOIN dept_employeRelation ON Employees.emp_no=dept_employeRelation.emp_no
 INNER JOIN Departments ON Departments.dept_no=dept_employeRelation.dept_no
 WHERE dept_name='Civil';
+
 SELECT  dept_name,COUNT(dept_name) FROM Employees
 INNER JOIN dept_employeRelation ON Employees.emp_no=dept_employeRelation.emp_no
 INNER JOIN Departments ON Departments.dept_no=dept_employeRelation.dept_no
 GROUP BY dept_name;
+
 SELECT * FROM dept_employeRelation;
+
 SELECT firstname,lastname,MAX(salary) FROM Employees
 INNER JOIN Salaries ON Employees.emp_no=Salaries.emp_no;
+
 DESC Salaries;
+
 DESC Employees;
+
 SELECT dept_name ,AVG(salary)FROM Departments
 INNER JOIN dept_employeRelation ON Departments.dept_no=dept_employeRelation.dept_no
 INNER JOIN Employees ON Employees.emp_no=dept_employeRelation.emp_no
 INNER JOIN Salaries ON Salaries.emp_no=Employees.emp_no
 GROUP BY dept_name;
+
 SELECT DISTINCT firstname,lastname,salary FROM Employees
 INNER JOIN Salaries on Employees.emp_no=Salaries.emp_no
 ORDER BY salary ASC;
