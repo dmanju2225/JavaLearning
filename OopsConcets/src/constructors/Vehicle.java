@@ -23,6 +23,12 @@ public class Vehicle {
 	public void setWheelCount(int wheelCount) {
 		this.wheelCount = wheelCount;
 	}
+	public void meth1(){
+		System.out.println("vehicle called meth1");
+	}
+	public void meth2(){
+		System.out.println("vehicle called meth2");
+	}
 	
 	
 }
