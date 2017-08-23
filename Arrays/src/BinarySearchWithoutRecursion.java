@@ -16,7 +16,7 @@ public class BinarySearchWithoutRecursion {
 		System.out.println(index);
 
 	}
-
+//hi
 	private static int binarySearch(ArrayList<Integer> al, int start, int end, int find) {
 		while(start<=end){//the loop breaks if it is empty array or if find is not present
 			int mid=start+(end-start/2);
