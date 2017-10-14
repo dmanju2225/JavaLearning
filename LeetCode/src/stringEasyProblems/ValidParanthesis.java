@@ -1,6 +1,7 @@
 package stringEasyProblems;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class ValidParanthesis
 {
@@ -11,6 +12,8 @@ public class ValidParanthesis
 		Scanner scan = new Scanner(System.in);
 		System.out.println("enter a string of (){}[] ");
 		String s = scan.nextLine();
+		boolean Oresult=OvalidParanthesis(s);
+		System.out.println(Oresult);
 		boolean result=validParanthesis(s);
 		System.out.println(result);
 	}
@@ -18,16 +21,33 @@ public class ValidParanthesis
 	private static boolean validParanthesis(String s)
 	{
 		// TODO Auto-generated method stub
-		 int len=s.length();
-		 char start=s.charAt(0);
-	        char end=s.charAt(len-1);
-	        if(len==0||len>1&&len%2==1){
-	            return false;
-	        } 
-	        else if(start==')'||start=='}'||start==']'||end=='('||end=='{'||end=='['){
-	        	return false;
-	        }
-		return true;
+		String s1=s.replace("()","").replace("{}","").replace("[]","");
+		return s1.isEmpty();
 	}
 
+	private static boolean OvalidParanthesis(String s)
+	{
+		// TODO Auto-generated method stub
+		 Stack<Character> stack=new Stack<Character>();
+		 for(int i=0;i<s.length();i++){
+			char c=s.charAt(i);
+			if(c=='('){
+				stack.push(')');
+			}
+			else if(c=='{'){
+				stack.push('}');
+			}
+			else if(c=='['){
+				stack.push(']');
+			}
+			else if(stack.isEmpty()||stack.pop()!=c){
+				return false;
+			}
+		 }
+		 if(stack.isEmpty()){
+			 return true;
+		 }
+		 else 
+			 return false;
+}
 }
