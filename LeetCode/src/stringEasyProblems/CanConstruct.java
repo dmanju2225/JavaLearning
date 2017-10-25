@@ -14,16 +14,16 @@ public class CanConstruct
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(System.in);
+		Scanner scan1 = new Scanner(System.in);
 		System.out.println("enter a string ");
-		String ransomNote = scan.nextLine();
+		String ransomNote = scan1.nextLine();
 		System.out.println("enter a string ");
-		String magazine = scan.nextLine();
+		String magazine = scan1.nextLine();
 		boolean bl=canConstruct(ransomNote,magazine);
 		System.out.println(bl);
 		boolean Obl=OcanConstruct(ransomNote,magazine);
 		System.out.println(Obl);
-	}
+		}
 
 	private static boolean OcanConstruct(String ransomNote, String magazine)
 	{
@@ -83,5 +83,4 @@ public class CanConstruct
 		   return true; 
 		}
 	}
-
 }

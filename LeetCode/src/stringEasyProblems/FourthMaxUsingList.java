@@ -34,28 +34,24 @@ public class FourthMaxUsingList
 		}
 		for (i = 0; i < arr.length; i++)
 		{
-			int flag = 0;
-			if (arr[i] > list.get(0))
-			{ 
-				list.set(2,list.get(1));
-				list.set(1, list.get(0));
-				list.set(0, arr[i]);
-				continue;
-			}
 			for (j = 0; j < list.size() - 2; j++)
 			{
-				if (arr[i] < list.get(j) && arr[i] > list.get(j + 1))
+				if (arr[i] > list.get(j))
+				{
+					list.set(j + 2, list.get(j + 1));
+					list.set(j + 1, list.get(j));
+					list.set(j, arr[i]);
+				}
+				else if (arr[i] < list.get(j) && arr[i] > list.get(j + 1))
 				{
 					list.set(j + 2, list.get(j + 1));
 					list.set(j + 1, arr[i]);
-					flag = 1;
-					break;
 				}
-			}
-			if (flag == 0 && arr[i] < list.get(j) && arr[i] > list.get(j + 1))
-			{
-				list.set(j + 1, arr[i]);
-			}
+				else if (arr[i] < list.get(j+1) && arr[i] > list.get(j + 2))
+				{
+					list.set(j + 2, arr[i]);
+				}
+			}	
 		}
 		return list.get(list.size() - 1);
 	}

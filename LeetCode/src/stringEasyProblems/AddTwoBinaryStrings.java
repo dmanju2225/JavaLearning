@@ -15,6 +15,7 @@ public class AddTwoBinaryStrings
 		String b = scan.nextLine();
 		String res = addBinary(a, b);
 		System.out.println(res);
+		scan.close();
 	}
 
 	private static String addBinary(String a, String b)
