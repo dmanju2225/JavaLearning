@@ -44,7 +44,7 @@ public class KdiffPairs
 			hm.put(nums[i],hm.getOrDefault(nums[i],0)+1);
 		}
 		System.out.println(hm.entrySet());
-		for(Map.Entry<Integer, Integer> entry:hm.entrySet()){
+		for(Map.Entry<Integer, Integer> entry:hm.entrySet()){//if u sysout entryset u will get all k,v hashtable
 			if(k==0){
 				if(entry.getValue()>=2){
 					count++;
@@ -80,7 +80,7 @@ public class KdiffPairs
 		return count;
 	}
 
-	private static int findPairs(int[] nums, int k)
+	private static int findPairs(int[] nums, int k)//not efficient
 	{
 		// TODO Auto-generated method stub
 		HashSet<Integer> hs1 = new HashSet<Integer>();
