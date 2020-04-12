@@ -15,6 +15,14 @@ public class TestCase2 {
         System.err.println(getPrefix() + getClass().getName() + " triggered SR1() on #" + Thread.currentThread().getId());
     }
 
+    @Test
+    public void testthread1(){
+        System.err.println(getPrefix() + getClass().getName() + " triggered method1 on #" + Thread.currentThread().getId());
+    }
+    @Test
+    public void testthread2(){
+        System.err.println(getPrefix() + getClass().getName() + " triggered method2 on #" + Thread.currentThread().getId());
+    }
     @AfterMethod
     public void validate(){
         System.err.println(getPrefix() + getClass().getName() + " triggered validate() on #" + Thread.currentThread().getId());
