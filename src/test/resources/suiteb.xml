@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="Suite" parallel="tests">
+
+    <test name="SecondTest" thread-count="5" parallel="methods" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name = "title" value="SR1 Verify item in mobile list page can be sorted by name"/>
+        <classes>
+            <class name="TestCase2"/>
+        </classes>
+    </test> <!-- First Test -->
+</suite> <!-- Suite -->
