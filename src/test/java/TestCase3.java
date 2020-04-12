@@ -23,6 +23,14 @@ public class TestCase3 {
                         + " triggered login() on #"
                         + Thread.currentThread().getId());
     }
+    @Test
+    public void testthread3(){
+        System.err.println(getPrefix() + getClass().getName() + " triggered method3 on #" + Thread.currentThread().getId());
+    }
+    @Test
+    public void testthread4(){
+        System.err.println(getPrefix() + getClass().getName() + " triggered method4 on #" + Thread.currentThread().getId());
+    }
 
     @AfterMethod
     @Parameters("title")
