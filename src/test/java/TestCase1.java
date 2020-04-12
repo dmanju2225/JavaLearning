@@ -21,6 +21,14 @@ public class TestCase1 {
     public void validate(String title) {
         System.err.println(getPrefix() + getClass().getName() + " triggered validate() with parameter [" + title + "] on #" + Thread.currentThread().getId());
     }
+    @Test
+    public void testthread5(){
+        System.err.println(getPrefix() + getClass().getName() + " triggered method5 on #" + Thread.currentThread().getId());
+    }
+    @Test
+    public void testthread6(){
+        System.err.println(getPrefix() + getClass().getName() + " triggered method6 on #" + Thread.currentThread().getId());
+    }
 
     private static String getPrefix() {
         ITestResult result = Reporter.getCurrentTestResult();
